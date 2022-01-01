@@ -1,4 +1,4 @@
-#My Personal Website
+# My Personal Website
 
 Clone the repo, then install dependencies with
 ```bash
