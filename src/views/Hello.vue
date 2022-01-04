@@ -12,7 +12,7 @@
       <router-link to="/home">
         <img
           v-show="showImage"
-          src="src/assets/svg/blinkingScroll.svg"
+          src="../assets/svg/blinkingScroll.svg"
           alt="Scroll Down"
           class="ScrollDown"
           height="50"

@@ -6,6 +6,8 @@ import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Projects from './views/Projects.vue'
 
+import "./assets/css/style.css";
+
 const router = createRouter({
     history: createWebHistory(),
     routes: [
