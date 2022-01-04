@@ -1,0 +1,16 @@
+<svg  viewBox="0.0 0.0 960.0 720.0" fill="none" stroke="none" stroke-linecap="square" stroke-miterlimit="10" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+<clipPath id="p.0">
+<path d="m0 0l960.0 0l0 720.0l-960.0 0l0 -720.0z" clip-rule="nonzero"/></clipPath>
+<g clip-path="url(#p.0)">
+  <path fill="#000000" fill-opacity="0.0" d="m0 0l960.0 0l0 720.0l-960.0 0z" fill-rule="evenodd"/>
+  <path fill="#41b883" d="m506.48477 593.0694l-174.48819 -174.51968l73.23343 0.21875l101.65701 101.675385l101.069824 -101.069824l72.00824 0.21508789z" fill-rule="evenodd">
+    <animate
+        attributeType="XML"
+        attributeName="fill"
+        values="#41B883;#17202A"
+        dur="1s"
+        repeatCount="indefinite"/>
+  </path>
+  <path stroke="#000000" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="butt" d="m506.48477 593.0694l-174.48819 -174.51968l73.23343 0.21875l101.65701 101.675385l101.069824 -101.069824l72.00824 0.21508789z" fill-rule="evenodd"/>
+</g>
+</svg>
