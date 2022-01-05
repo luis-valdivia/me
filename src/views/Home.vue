@@ -4,7 +4,7 @@ import Footer from "../components/Footer.vue";
 </script>
 
 <template>
-  <div class="home">
+  <div>
     <NavBar class="NavBar" />
     <div class="container">
       <h1>Luis E Valdivia</h1>

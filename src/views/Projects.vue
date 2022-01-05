@@ -1,12 +1,16 @@
  <script setup>
 import NavBar from "../components/NavBar.vue";
+import Footer from "../components/Footer.vue";
 </script>
 
 <template>
-  <NavBar />
-  <div class="projects">
-    <h1>Projects</h1>
-    <p>Work in Progress...</p>
+  <div>
+    <NavBar />
+    <div class="container">
+      <h1>Projects</h1>
+      <p>Work in Progress...</p>
+    </div>
+    <Footer />
   </div>
 </template>
 
@@ -14,11 +18,15 @@ import NavBar from "../components/NavBar.vue";
 export default {
   components: {
     NavBar,
+    Footer,
   },
 };
 </script>
 
 <style scoped>
+.container {
+  height: calc(100vh - 71px - 109px);
+}
 p {
   margin: 0 auto;
   width: 50vw;

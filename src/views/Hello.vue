@@ -1,6 +1,6 @@
 <template>
-  <transition appear @enter="enter">
-    <div id="helloDiv">
+  <div id="helloDiv">
+    <transition appear @enter="enter">
       <span class="flex">
         <!-- makes me wish I had GSAP membership-->
         <h1 id="a">H</h1>
@@ -9,17 +9,17 @@
         <h1 id="d">l</h1>
         <h1 id="e">o</h1>
       </span>
-      <router-link to="/home">
-        <img
-          v-show="showImage"
-          src="../assets/svg/blinkingScroll.svg"
-          alt="Scroll Down"
-          class="ScrollDown"
-          height="50"
-        />
-      </router-link>
-    </div>
-  </transition>
+    </transition>
+    <router-link to="/home">
+      <img
+        v-show="showImage"
+        src="../assets/svg/blinkingScroll.svg"
+        alt="Scroll Down"
+        class="ScrollDown"
+        height="50"
+      />
+    </router-link>
+  </div>
 </template>
 
 <script>
