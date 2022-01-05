@@ -7,14 +7,11 @@ import Footer from "../components/Footer.vue";
   <div class="home">
     <NavBar class="NavBar" />
     <div class="container">
-      <h1>Home</h1>
+      <h1>Luis E Valdivia</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-        impedit libero, in ut, voluptates et neque, nostrum ratione voluptas
-        eius odio eveniet recusandae. Saepe quisquam sit aperiam minus quam
-        enim!
+        Hi, I'm a front-end developer, open to learning new technologies and
+        embarking on new opportunities.
       </p>
-      <a href="">link to</a>
     </div>
     <Footer />
   </div>
