@@ -79,6 +79,11 @@ export default {
       document.getElementById("helloDiv").style.minHeight = "calc(100vh + 1px)";
       window.onscroll = function () {
         document.getElementsByClassName("ScrollDown")[0].click();
+        // window.scrollTo({
+        //   top: document.body.scrollHeight,
+        //   behavior: "smooth",
+        //   duration: 0.4,
+        // });
         window.onscroll = null;
       };
     }

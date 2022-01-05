@@ -1,4 +1,4 @@
- <script setup>
+<script setup>
 import NavBar from "../components/NavBar.vue";
 import Footer from "../components/Footer.vue";
 </script>
@@ -8,7 +8,10 @@ import Footer from "../components/Footer.vue";
     <NavBar />
     <div class="container">
       <h1>Projects</h1>
-      <p>Work in Progress...</p>
+      <p>
+        Work in Progress... come back later! PS. work with Koinos site will be
+        up after mainnet so timeline for that is indeterminate.
+      </p>
     </div>
     <Footer />
   </div>

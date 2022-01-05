@@ -12,6 +12,7 @@ import Footer from "../components/Footer.vue";
         Hi, I'm a front-end developer, open to learning new technologies and
         embarking on new opportunities.
       </p>
+      <img src="../assets/png/me.png" alt="Me" />
     </div>
     <Footer />
   </div>
@@ -31,11 +32,16 @@ export default {
   height: calc(100vh - 71px - 109px);
 }
 p {
-  margin: 0 auto;
+  margin: 1em auto;
   width: 50vw;
 }
 h1 {
   margin: 0 auto;
   width: fit-content;
+}
+img {
+  display: block;
+  height: 50vh;
+  margin: 0 auto;
 }
 </style>
