@@ -9,17 +9,17 @@
       <div class="primary-nav flex" id="overlay" @click="hideMenu">
         <li>
           <router-link to="/home">
-            <span>Home</span>
+            <span id="home">Home</span>
           </router-link>
         </li>
         <li>
           <router-link to="/home/about">
-            <span>About</span>
+            <span id="about">About</span>
           </router-link>
         </li>
         <li>
           <router-link to="/home/projects">
-            <span>Projects</span>
+            <span id="projects">Projects</span>
           </router-link>
         </li>
         <li>
@@ -39,16 +39,23 @@
 
 <script>
 export default {
+  data() {
+    return { on: false };
+  },
   methods: {
     showMenu() {
       document.getElementById("overlay").style.display = "flex";
       window.onscroll = function () {
         window.scrollTo(0, 0);
       };
+      this.on = true;
     },
     hideMenu() {
-      document.getElementById("overlay").style.display = "none";
-      window.onscroll = null;
+      if (this.on == true) {
+        document.getElementById("overlay").style.display = "none";
+        window.onscroll = null;
+        this.on = false;
+      }
     },
   },
 };
