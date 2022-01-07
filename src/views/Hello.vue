@@ -10,6 +10,7 @@
         <h1 id="e">o</h1>
       </span>
     </transition>
+    <p v-show="showImage">Swipe all the way down!</p>
     <router-link to="/home">
       <img
         v-show="showImage"
@@ -79,11 +80,6 @@ export default {
       document.getElementById("helloDiv").style.minHeight = "calc(100vh + 1px)";
       window.onscroll = function () {
         document.getElementsByClassName("ScrollDown")[0].click();
-        // window.scrollTo({
-        //   top: document.body.scrollHeight,
-        //   behavior: "smooth",
-        //   duration: 0.4,
-        // });
         window.onscroll = null;
       };
     }
@@ -109,5 +105,10 @@ img {
 }
 h1 {
   font-size: 4em;
+}
+p {
+  position: absolute;
+  margin-top: 6em;
+  right: calc(50vw - 85px);
 }
 </style>

@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
 .container {
-  height: calc(100vh - 71px - 109px);
+  min-height: calc(100vh - 71px - 109px);
 }
 p {
   margin: 1.5em auto;
@@ -55,5 +55,12 @@ p::first-letter {
 h1 {
   margin: 0 auto;
   width: fit-content;
+}
+
+@media only screen and (max-width: 330px) {
+  p {
+    width: 80vw;
+    font-size: 0.75em;
+  }
 }
 </style>

@@ -9,8 +9,9 @@ import Footer from "../components/Footer.vue";
     <div class="container">
       <h1>Luis E Valdivia</h1>
       <p>
-        Hi, I'm a front-end developer, open to learning new technologies and
-        embarking on new opportunities.
+        Front-end developer.
+        <br />
+        Ready to learn new technologies and embark on new opportunities.
       </p>
       <img src="../assets/png/me.png" alt="Me" />
     </div>
@@ -29,11 +30,11 @@ export default {
 
 <style scoped>
 .container {
-  height: calc(100vh - 71px - 109px);
+  min-height: calc(100vh - 71px - 109px);
 }
 p {
-  margin: 1em auto;
-  width: 50vw;
+  margin: 1.5em auto;
+  width: 70vw;
 }
 h1 {
   margin: 0 auto;
@@ -43,5 +44,12 @@ img {
   display: block;
   height: 50vh;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 330px) {
+  p {
+    width: 80vw;
+    font-size: 0.75em;
+  }
 }
 </style>
