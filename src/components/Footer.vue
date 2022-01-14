@@ -20,7 +20,7 @@
 <style scoped>
 div {
   padding: 1.5em 0;
-  background: linear-gradient(to top, black, var(--secondary));
+  background: linear-gradient(to top, black, var(--secondary) 80%);
   justify-content: space-around;
 }
 </style>

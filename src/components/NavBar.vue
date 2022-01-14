@@ -2,23 +2,28 @@
   <nav>
     <ul class="primary-nav flex">
       <li>
-        <router-link to="/">
-          <img src="../assets/png/logo.png" alt="Logo" height="25" />
+        <router-link to="/" class="no-line">
+          <img
+            src="../assets/png/logo.png"
+            alt="Logo"
+            height="25"
+            @click="reloadPage"
+          />
         </router-link>
       </li>
       <div class="primary-nav flex" id="overlay" @click="hideMenu">
         <li>
-          <router-link to="/home">
+          <router-link to="/">
             <span id="home">Home</span>
           </router-link>
         </li>
         <li>
-          <router-link to="/home/about">
+          <router-link to="/about">
             <span id="about">About</span>
           </router-link>
         </li>
         <li>
-          <router-link to="/home/projects">
+          <router-link to="/projects">
             <span id="projects">Projects</span>
           </router-link>
         </li>
@@ -29,7 +34,7 @@
         </li>
       </div>
       <li>
-        <a class="icon" @click="showMenu">
+        <a class="icon no-line" @click="showMenu">
           <img src="../assets/svg/dropDown.svg" alt="mobile menu" height="25" />
         </a>
       </li>
@@ -57,13 +62,20 @@ export default {
         this.on = false;
       }
     },
+    // reloading the page needs to wait a little for the page
+    // to route back to home first
+    reloadPage() {
+      window.setTimeout(function () {
+        location.reload();
+      }, 200);
+    },
   },
 };
 </script>
 
 <style scoped>
 nav {
-  background: linear-gradient(to bottom, black, var(--secondary));
+  background: linear-gradient(to bottom, black, var(--secondary) 80%);
   padding: 1.5em 10%;
 }
 .primary-nav {
@@ -94,11 +106,12 @@ span {
     position: fixed;
     display: none;
     width: 100vw;
-    height: 100vh;
+    height: 60vh;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    padding: 10vh 0 30vh 0;
     background-color: var(--secondary);
     z-index: 2;
   }
@@ -106,7 +119,7 @@ span {
     margin: 2em auto;
   }
   #overlay > li span {
-    font-size: 4em;
+    font-size: 3em;
   }
 }
 </style>

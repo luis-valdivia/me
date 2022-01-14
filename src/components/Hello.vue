@@ -11,15 +11,14 @@
       </span>
     </transition>
     <p v-show="showImage">Swipe all the way down!</p>
-    <router-link to="/home">
-      <img
-        v-show="showImage"
-        src="../assets/svg/blinkingScroll.svg"
-        alt="Scroll Down"
-        class="ScrollDown"
-        height="50"
-      />
-    </router-link>
+    <img
+      v-show="showImage"
+      src="../assets/svg/blinkingScroll.svg"
+      alt="Scroll Down"
+      class="ScrollDown"
+      height="50"
+      @click="scroll"
+    />
   </div>
 </template>
 
@@ -41,33 +40,34 @@ export default {
         opacity: 0,
         duration: 0.4,
         ease: "bounce.out",
+        delay: 0.4,
       });
       gsap.from("#b", {
-        y: -100,
-        opacity: 0,
-        duration: 0.4,
-        delay: 0.2,
-        ease: "bounce.out",
-      });
-      gsap.from("#c", {
-        y: -100,
-        opacity: 0,
-        duration: 0.4,
-        delay: 0.4,
-        ease: "bounce.out",
-      });
-      gsap.from("#d", {
         y: -100,
         opacity: 0,
         duration: 0.4,
         delay: 0.6,
         ease: "bounce.out",
       });
-      gsap.from("#e", {
+      gsap.from("#c", {
         y: -100,
         opacity: 0,
         duration: 0.4,
         delay: 0.8,
+        ease: "bounce.out",
+      });
+      gsap.from("#d", {
+        y: -100,
+        opacity: 0,
+        duration: 0.4,
+        delay: 1.0,
+        ease: "bounce.out",
+      });
+      gsap.from("#e", {
+        y: -100,
+        opacity: 0,
+        duration: 0.4,
+        delay: 1.2,
         ease: "bounce.out",
       });
     };
@@ -75,15 +75,9 @@ export default {
   },
   mounted() {
     let vm = this;
-    function functionX() {
+    window.setTimeout(function () {
       vm.showImage = true;
-      document.getElementById("helloDiv").style.minHeight = "calc(100vh + 1px)";
-      window.onscroll = function () {
-        document.getElementsByClassName("ScrollDown")[0].click();
-        window.onscroll = null;
-      };
-    }
-    window.setTimeout(functionX, 1400);
+    }, 1400);
   },
 };
 </script>
@@ -91,6 +85,7 @@ export default {
 <style scoped>
 div {
   min-height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,6 +95,7 @@ span {
   margin-bottom: 6em;
 }
 img {
+  margin-top: 8em;
   position: absolute;
   right: calc(50vw - 33.33px);
 }
