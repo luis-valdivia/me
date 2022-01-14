@@ -27,9 +27,13 @@ h2,
 h3 {
     margin: 0;
 }
+
+/* styling and animation for links */
 a {
     color: var(--primary);
     text-decoration: none;
+    position: relative;
+    padding-bottom: 0.2em;
 }
 a:hover, 
 a:focus {
@@ -67,6 +71,8 @@ a:focus::after {
     transform: scaleX(1);
 }
 
-.no-line::before {
+/* no-line class */
+.no-line::before,
+.no-line::after {
     height: 0px;
-  }
+}

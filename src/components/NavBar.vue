@@ -2,23 +2,23 @@
   <nav>
     <ul class="primary-nav flex">
       <li>
-        <router-link to="/">
+        <router-link to="/" class="no-line">
           <img src="../assets/png/logo.png" alt="Logo" height="25" />
         </router-link>
       </li>
       <div class="primary-nav flex" id="overlay" @click="hideMenu">
         <li>
-          <router-link to="/home">
+          <router-link to="/">
             <span id="home">Home</span>
           </router-link>
         </li>
         <li>
-          <router-link to="/home/about">
+          <router-link to="/about">
             <span id="about">About</span>
           </router-link>
         </li>
         <li>
-          <router-link to="/home/projects">
+          <router-link to="/projects">
             <span id="projects">Projects</span>
           </router-link>
         </li>
@@ -94,11 +94,12 @@ span {
     position: fixed;
     display: none;
     width: 100vw;
-    height: 100vh;
+    height: 60vh;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    padding: 20vh 0;
     background-color: var(--secondary);
     z-index: 2;
   }
@@ -106,7 +107,7 @@ span {
     margin: 2em auto;
   }
   #overlay > li span {
-    font-size: 4em;
+    font-size: 3em;
   }
 }
 </style>

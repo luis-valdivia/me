@@ -1,35 +1,14 @@
-<script setup>
-import NavBar from "../components/NavBar.vue";
-import Footer from "../components/Footer.vue";
-</script>
-
 <template>
   <div>
-    <NavBar />
-    <div class="container">
-      <h1>Projects</h1>
-      <p>
-        Work in Progress... come back later! PS. work with Koinos site will be
-        up after mainnet so timeline for that is indeterminate.
-      </p>
-    </div>
-    <Footer />
+    <h1>Projects</h1>
+    <p>
+      Work in Progress... come back later! PS. work with Koinos site will be up
+      after mainnet so timeline for that is indeterminate.
+    </p>
   </div>
 </template>
 
-<script>
-export default {
-  components: {
-    NavBar,
-    Footer,
-  },
-};
-</script>
-
 <style scoped>
-.container {
-  min-height: calc(100vh - 71px - 109px);
-}
 p {
   margin: 1.5em auto;
   width: 70vw;

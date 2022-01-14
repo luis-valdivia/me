@@ -11,15 +11,14 @@
       </span>
     </transition>
     <p v-show="showImage">Swipe all the way down!</p>
-    <router-link to="/home">
-      <img
-        v-show="showImage"
-        src="../assets/svg/blinkingScroll.svg"
-        alt="Scroll Down"
-        class="ScrollDown"
-        height="50"
-      />
-    </router-link>
+    <img
+      v-show="showImage"
+      src="../assets/svg/blinkingScroll.svg"
+      alt="Scroll Down"
+      class="ScrollDown"
+      height="50"
+      @click="scroll"
+    />
   </div>
 </template>
 
@@ -77,11 +76,14 @@ export default {
     let vm = this;
     function functionX() {
       vm.showImage = true;
-      document.getElementById("helloDiv").style.minHeight = "calc(100vh + 1px)";
-      window.onscroll = function () {
-        document.getElementsByClassName("ScrollDown")[0].click();
-        window.onscroll = null;
-      };
+      // document.getElementById("helloDiv").style.minHeight = "calc(100vh + 1px)";
+      // window.onscroll = function () {
+      //   window.scrollTo({
+      //     top: window.innerHeight,
+      //     behavior: "smooth",
+      //   });
+      //   window.onscroll = null;
+      // };
     }
     window.setTimeout(functionX, 1400);
   },
@@ -91,6 +93,7 @@ export default {
 <style scoped>
 div {
   min-height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,6 +103,7 @@ span {
   margin-bottom: 6em;
 }
 img {
+  margin-top: 8em;
   position: absolute;
   right: calc(50vw - 33.33px);
 }

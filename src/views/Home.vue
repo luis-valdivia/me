@@ -1,37 +1,16 @@
-<script setup>
-import NavBar from "../components/NavBar.vue";
-import Footer from "../components/Footer.vue";
-</script>
-
 <template>
   <div>
-    <NavBar class="NavBar" />
-    <div class="container">
-      <h1>Luis E Valdivia</h1>
-      <p>
-        Front-end developer.
-        <br />
-        Ready to learn new technologies and embark on new opportunities.
-      </p>
-      <img src="../assets/png/me.png" alt="Me" />
-    </div>
-    <Footer />
+    <h1>Luis E Valdivia</h1>
+    <p>
+      Front-end developer.
+      <br />
+      Ready to learn new technologies and embark on new opportunities.
+    </p>
+    <img src="../assets/png/me.jpg" alt="Me" />
   </div>
 </template>
 
-<script>
-export default {
-  components: {
-    NavBar,
-    Footer,
-  },
-};
-</script>
-
 <style scoped>
-.container {
-  min-height: calc(100vh - 71px - 109px);
-}
 p {
   margin: 1.5em auto;
   width: 70vw;
