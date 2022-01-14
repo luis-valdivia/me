@@ -30,7 +30,7 @@ export default {
     if (window.innerWidth > 1000) {
       window.setTimeout(function () {
         window.scrollTo(0, 0);
-      }, 200);
+      }, 250);
       window.setTimeout(function () {
         window.onscroll = function () {
           window.scrollTo({

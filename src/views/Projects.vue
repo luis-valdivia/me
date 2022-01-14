@@ -2,8 +2,11 @@
   <div>
     <h1>Projects</h1>
     <p>
-      Work in Progress... come back later! PS. work with Koinos site will be up
-      after mainnet so timeline for that is indeterminate.
+      Work in Progress...
+      <br />
+      ... but if you're here already, I'm going to add a few projects soon. To
+      name a few: research at UCSB on derangements, research on land use, and as
+      time goes on those will be replaced with snapshots into websites.
     </p>
   </div>
 </template>

@@ -4,10 +4,13 @@
       <li>
         <router-link to="/" class="no-line">
           <img
+            id="navLogo"
             src="../assets/png/logo.png"
             alt="Logo"
             height="25"
             @click="reloadPage"
+            @mouseover="spinLogo"
+            @mouseleave="spinLogoBack"
           />
         </router-link>
       </li>
@@ -43,6 +46,7 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
 export default {
   data() {
     return { on: false };
@@ -62,11 +66,24 @@ export default {
         this.on = false;
       }
     },
+    spinLogo() {
+      gsap.from("#navLogo", {
+        rotation: "360",
+      });
+    },
+    spinLogoBack() {
+      gsap.from("#navLogo", {
+        rotation: "0",
+      });
+    },
     // reloading the page needs to wait a little for the page
     // to route back to home first
     reloadPage() {
       window.setTimeout(function () {
         location.reload();
+        window.setTimeout(function () {
+          window.scrollTo(0, 0);
+        }, 200);
       }, 200);
     },
   },

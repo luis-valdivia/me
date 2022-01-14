@@ -74,6 +74,11 @@ export default {
     return { enter };
   },
   mounted() {
+    window.onunload = function () {
+      window.setTimeout(function () {
+        window.scrollTo(0, 0);
+      }, 250);
+    };
     let vm = this;
     window.setTimeout(function () {
       vm.showImage = true;
