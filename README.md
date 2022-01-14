@@ -8,12 +8,11 @@ then serve with hot reload at localhost:3000 with
 ```bash
 $ npm run dev
 ```
-
 To build, run 
 ```bash
 $ npm run build
 ```
-and cd into /dist to run 
+and then make it live however you like. I'm using surge, so I need to cd into /dist to run 
 ```bash
 $ surge
 ```
