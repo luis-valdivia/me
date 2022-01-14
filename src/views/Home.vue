@@ -15,6 +15,10 @@ p {
   margin: 1.5em auto;
   width: 70vw;
 }
+p::first-line {
+  font-size: 2em;
+  font-style: italic;
+}
 h1 {
   margin: 0 auto;
   width: fit-content;
@@ -29,6 +33,9 @@ img {
   p {
     width: 80vw;
     font-size: 0.75em;
+  }
+  p::first-line {
+    font-size: 1em;
   }
 }
 </style>

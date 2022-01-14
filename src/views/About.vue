@@ -7,9 +7,9 @@
       California for better opportunities, where I did most of my schooling.
       During high school I attended UCLA Math Circle and a diversity-oriented
       math club with an emphasis on Python programming, which led to my first
-      personal laptop. A year later I learned the fundamentals of programming
-      with Java, so by the time I entered UCSB for my undergrad, I was ready to
-      further my knowledge with C/C++.
+      personal laptop and attempts at numerical modeling. A year later I learned
+      the fundamentals of programming with Java, so by the time I entered UCSB
+      for my undergrad, I was ready to further my knowledge with C and C++.
     </p>
     <p>
       I majored in math so I focused heavily on the theoritcal side of things

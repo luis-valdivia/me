@@ -25,22 +25,27 @@ export default {
     Footer,
   },
   mounted() {
-    // let vm = this;
-    function functionX() {
-      // vm.showImage = true;
-      // document.getElementById("helloDiv").style.minHeight = "calc(100vh + 1px)";
-      window.onscroll = function () {
-        window.scrollTo({
-          top: window.innerHeight,
-          behavior: "smooth",
-        });
-        window.onscroll = null;
-        window.setTimeout(function () {
-          document.getElementById("deleteAfter").style.display = "none";
-        }, 500);
-      };
+    // since smooth scrolling is not widely supported in mobile
+    // Hello component will only show up in non-mobile sized screens
+    if (window.innerWidth > 1000) {
+      window.setTimeout(function () {
+        window.scrollTo(0, 0);
+      }, 200);
+      window.setTimeout(function () {
+        window.onscroll = function () {
+          window.scrollTo({
+            top: window.innerHeight,
+            behavior: "smooth",
+          });
+          window.onscroll = null;
+          window.setTimeout(function () {
+            document.getElementById("deleteAfter").style.display = "none";
+          }, 600);
+        };
+      }, 1500);
+    } else {
+      document.getElementById("deleteAfter").style.display = "none";
     }
-    window.setTimeout(functionX, 1500);
   },
 };
 </script>

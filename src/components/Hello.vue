@@ -40,33 +40,34 @@ export default {
         opacity: 0,
         duration: 0.4,
         ease: "bounce.out",
+        delay: 0.4,
       });
       gsap.from("#b", {
-        y: -100,
-        opacity: 0,
-        duration: 0.4,
-        delay: 0.2,
-        ease: "bounce.out",
-      });
-      gsap.from("#c", {
-        y: -100,
-        opacity: 0,
-        duration: 0.4,
-        delay: 0.4,
-        ease: "bounce.out",
-      });
-      gsap.from("#d", {
         y: -100,
         opacity: 0,
         duration: 0.4,
         delay: 0.6,
         ease: "bounce.out",
       });
-      gsap.from("#e", {
+      gsap.from("#c", {
         y: -100,
         opacity: 0,
         duration: 0.4,
         delay: 0.8,
+        ease: "bounce.out",
+      });
+      gsap.from("#d", {
+        y: -100,
+        opacity: 0,
+        duration: 0.4,
+        delay: 1.0,
+        ease: "bounce.out",
+      });
+      gsap.from("#e", {
+        y: -100,
+        opacity: 0,
+        duration: 0.4,
+        delay: 1.2,
         ease: "bounce.out",
       });
     };
@@ -74,18 +75,9 @@ export default {
   },
   mounted() {
     let vm = this;
-    function functionX() {
+    window.setTimeout(function () {
       vm.showImage = true;
-      // document.getElementById("helloDiv").style.minHeight = "calc(100vh + 1px)";
-      // window.onscroll = function () {
-      //   window.scrollTo({
-      //     top: window.innerHeight,
-      //     behavior: "smooth",
-      //   });
-      //   window.onscroll = null;
-      // };
-    }
-    window.setTimeout(functionX, 1400);
+    }, 1400);
   },
 };
 </script>
