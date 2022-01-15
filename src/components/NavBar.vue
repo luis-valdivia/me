@@ -81,9 +81,8 @@ export default {
     reloadPage() {
       window.setTimeout(function () {
         location.reload();
-        window.setTimeout(function () {
-          window.scrollTo(0, 0);
-        }, 200);
+        location.reload();
+        window.scrollTo(0, 0);
       }, 200);
     },
   },

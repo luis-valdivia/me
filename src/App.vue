@@ -30,7 +30,7 @@ export default {
     if (window.innerWidth > 1000) {
       window.setTimeout(function () {
         window.scrollTo(0, 0);
-      }, 250);
+      }, 300);
       window.setTimeout(function () {
         window.onscroll = function () {
           window.scrollTo({
@@ -42,7 +42,7 @@ export default {
             document.getElementById("deleteAfter").style.display = "none";
           }, 600);
         };
-      }, 1500);
+      }, 1000);
     } else {
       document.getElementById("deleteAfter").style.display = "none";
     }
