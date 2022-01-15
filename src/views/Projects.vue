@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <h1>Projects</h1>
+    <h1>Projects</h1>
     <div v-if="error">
       {{ error }}
     </div>
@@ -9,8 +9,7 @@
         <h2>{{ project.attributes.name }}</h2>
         <p>{{ project.attributes.description }}</p>
       </div>
-    </div> -->
-    <p>{{ rando }}</p>
+    </div>
   </div>
 </template>
 
@@ -20,23 +19,16 @@ import axios from "axios";
 export default {
   data() {
     return {
-      rando: [],
-      // projects: [],
-      // error: null,
+      projects: [],
+      error: null,
     };
   },
   async mounted() {
-    // try {
-    //   const response = await axios.get("http://localhost:1337/api/projects");
-    //   this.projects = response.data;
-    // } catch (error) {
-    //   this.error = error;
-    // }
     try {
-      const response2 = await axios.get(
-        "https://app.fakejson.com/q/VPMZwFuq?token=cHwYFXlbAEWdhmQAThEwLw"
+      const response = await axios.get(
+        "https://me-strapi-backend.onrender.com/api/projects"
       );
-      this.rando = response2.data;
+      this.projects = response.data;
     } catch (error) {
       this.error = error;
     }
