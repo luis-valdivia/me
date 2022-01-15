@@ -1,15 +1,48 @@
 <template>
   <div>
-    <h1>Projects</h1>
-    <p>
-      Work in Progress...
-      <br />
-      ... but if you're here already, I'm going to add a few projects soon. To
-      name a few: research at UCSB on derangements, research on land use, and as
-      time goes on those will be replaced with snapshots into websites.
-    </p>
+    <!-- <h1>Projects</h1>
+    <div v-if="error">
+      {{ error }}
+    </div>
+    <div v-else class="project">
+      <div v-for="project in projects.data" :key="project.id">
+        <h2>{{ project.attributes.name }}</h2>
+        <p>{{ project.attributes.description }}</p>
+      </div>
+    </div> -->
+    <p>{{ rando }}</p>
   </div>
 </template>
+
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      rando: [],
+      // projects: [],
+      // error: null,
+    };
+  },
+  async mounted() {
+    // try {
+    //   const response = await axios.get("http://localhost:1337/api/projects");
+    //   this.projects = response.data;
+    // } catch (error) {
+    //   this.error = error;
+    // }
+    try {
+      const response2 = await axios.get(
+        "https://app.fakejson.com/q/VPMZwFuq?token=cHwYFXlbAEWdhmQAThEwLw"
+      );
+      this.rando = response2.data;
+    } catch (error) {
+      this.error = error;
+    }
+  },
+};
+</script>
 
 <style scoped>
 p {
@@ -19,6 +52,10 @@ p {
 h1 {
   margin: 0 auto;
   width: fit-content;
+}
+.project {
+  margin: 1.5em auto;
+  width: 70vw;
 }
 
 @media only screen and (max-width: 330px) {
