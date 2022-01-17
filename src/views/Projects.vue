@@ -25,9 +25,7 @@ export default {
   },
   async mounted() {
     try {
-      const response = await axios.get(
-        "https://me-strapi-backend.onrender.com/api/projects"
-      );
+      const response = await axios.get("http://localhost:1337/api/projects");
       this.projects = response.data;
     } catch (error) {
       this.error = error;
