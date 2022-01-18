@@ -2,12 +2,14 @@
 import Hello from "./components/Hello.vue";
 import NavBar from "./components/NavBar.vue";
 import Footer from "./components/Footer.vue";
+import Dots from "./components/Dots.vue";
 </script>
 
 <template>
   <Hello id="deleteAfter" />
   <NavBar />
   <div class="container">
+    <Dots />
     <router-view v-slot="{ Component }">
       <transition name="scale-slide">
         <component :is="Component" class="component" />
@@ -23,6 +25,7 @@ export default {
     Hello,
     NavBar,
     Footer,
+    Dots,
   },
   mounted() {
     // since smooth scrolling is not widely supported in mobile
