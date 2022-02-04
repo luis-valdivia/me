@@ -47,6 +47,7 @@
 
 <script>
 import { gsap } from "gsap";
+
 export default {
   data() {
     return { on: false };
@@ -81,9 +82,25 @@ export default {
     reloadPage() {
       window.setTimeout(function () {
         location.reload();
-        location.reload();
         window.scrollTo(0, 0);
       }, 200);
+    },
+  },
+  watch: {
+    $route(to, from) {
+      if (window.location.pathname == "/") {
+        document.getElementById("home").style.color = "aliceblue";
+        document.getElementById("about").style.color = "var(--primary)";
+        document.getElementById("projects").style.color = "var(--primary)";
+      } else if (window.location.pathname == "/about") {
+        document.getElementById("home").style.color = "var(--primary)";
+        document.getElementById("about").style.color = "aliceblue";
+        document.getElementById("projects").style.color = "var(--primary)";
+      } else if (window.location.pathname == "/projects") {
+        document.getElementById("home").style.color = "var(--primary)";
+        document.getElementById("about").style.color = "var(--primary)";
+        document.getElementById("projects").style.color = "aliceblue";
+      }
     },
   },
 };

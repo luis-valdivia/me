@@ -6,7 +6,7 @@ import Dots from "./components/Dots.vue";
 </script>
 
 <template>
-  <Hello id="deleteAfter" />
+  <Hello />
   <NavBar />
   <div class="container">
     <Dots />
@@ -28,27 +28,18 @@ export default {
     Dots,
   },
   mounted() {
-    // since smooth scrolling is not widely supported in mobile
-    // Hello component will only show up in non-mobile sized screens
-    if (window.innerWidth > 1000) {
-      window.setTimeout(function () {
-        window.scrollTo(0, 0);
-      }, 300);
-      window.setTimeout(function () {
-        window.onscroll = function () {
-          window.scrollTo({
-            top: window.innerHeight,
-            behavior: "smooth",
-          });
-          window.onscroll = null;
-          window.setTimeout(function () {
-            document.getElementById("deleteAfter").style.display = "none";
-          }, 600);
-        };
-      }, 1000);
-    } else {
-      document.getElementById("deleteAfter").style.display = "none";
-    }
+    window.setTimeout(function () {
+      window.onscroll = function () {
+        window.scrollTo({
+          top: window.innerHeight,
+          behavior: "smooth",
+        });
+        window.onscroll = null;
+        window.setTimeout(function () {
+          document.getElementById("helloDiv").style.display = "none";
+        }, 600);
+      };
+    }, 1000);
   },
 };
 </script>

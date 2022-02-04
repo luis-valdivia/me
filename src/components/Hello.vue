@@ -74,11 +74,11 @@ export default {
     return { enter };
   },
   mounted() {
-    window.onunload = function () {
-      window.setTimeout(function () {
-        window.scrollTo(0, 0);
-      }, 250);
-    };
+    // IT'S DEPRECEATED BUT IT STILL WORKS FOR NOW
+    console.info(performance.navigation.type);
+    if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+      document.getElementById("helloDiv").style.display = "none";
+    }
     let vm = this;
     window.setTimeout(function () {
       vm.showImage = true;
@@ -89,8 +89,9 @@ export default {
 
 <style scoped>
 div {
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
