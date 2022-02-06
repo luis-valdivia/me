@@ -8,7 +8,6 @@
             src="../assets/png/logo.png"
             alt="Logo"
             height="25"
-            @click="reloadPage"
             @mouseover="spinLogo"
             @mouseleave="spinLogoBack"
           />
@@ -16,7 +15,7 @@
       </li>
       <div class="primary-nav flex" id="overlay" @click="hideMenu">
         <li>
-          <router-link to="/">
+          <router-link to="/" id="home-link">
             <span id="home">Home</span>
           </router-link>
         </li>
@@ -32,7 +31,7 @@
         </li>
         <li>
           <a href="mailto: luisvr0401@gmail.com">
-            <span>Contact</span>
+            <span id="contact">Contact</span>
           </a>
         </li>
       </div>
@@ -55,6 +54,30 @@ export default {
   methods: {
     showMenu() {
       document.getElementById("overlay").style.display = "flex";
+      gsap.to("#overlay", {
+        opacity: 1,
+        duration: 0.4,
+      });
+      gsap.from("#home", {
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.2,
+      });
+      gsap.from("#about", {
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.4,
+      });
+      gsap.from("#projects", {
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.6,
+      });
+      gsap.from("#contact", {
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.8,
+      });
       window.onscroll = function () {
         window.scrollTo(0, 0);
       };
@@ -62,7 +85,18 @@ export default {
     },
     hideMenu() {
       if (this.on == true) {
-        document.getElementById("overlay").style.display = "none";
+        gsap.fromTo(
+          "#overlay",
+          {
+            opacity: 1,
+            duration: 0.6,
+            delay: 0.4,
+          },
+          { opacity: 0 }
+        );
+        window.setTimeout(function () {
+          document.getElementById("overlay").style.display = "none";
+        }, 1000);
         window.onscroll = null;
         this.on = false;
       }
@@ -76,14 +110,6 @@ export default {
       gsap.from("#navLogo", {
         rotation: "0",
       });
-    },
-    // reloading the page needs to wait a little for the page
-    // to route back to home first
-    reloadPage() {
-      window.setTimeout(function () {
-        location.reload();
-        window.scrollTo(0, 0);
-      }, 200);
     },
   },
   watch: {
@@ -153,6 +179,10 @@ span {
   }
   #overlay > li span {
     font-size: 3em;
+  }
+  a::before,
+  a::after {
+    height: 0px;
   }
 }
 </style>

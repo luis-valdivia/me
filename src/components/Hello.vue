@@ -75,14 +75,27 @@ export default {
   },
   mounted() {
     // IT'S DEPRECEATED BUT IT STILL WORKS FOR NOW
-    console.info(performance.navigation.type);
     if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
       document.getElementById("helloDiv").style.display = "none";
     }
-    let vm = this;
-    window.setTimeout(function () {
-      vm.showImage = true;
-    }, 1400);
+    if (document.getElementById("helloDiv").style.display != "none") {
+      let vm = this;
+      window.setTimeout(function () {
+        vm.showImage = true;
+      }, 1400);
+      window.setTimeout(function () {
+        window.onscroll = function () {
+          window.scrollTo({
+            top: window.innerHeight,
+            behavior: "smooth",
+          });
+          window.onscroll = null;
+          window.setTimeout(function () {
+            document.getElementById("helloDiv").style.display = "none";
+          }, 600);
+        };
+      }, 1000);
+    }
   },
 };
 </script>

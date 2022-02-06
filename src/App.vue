@@ -23,23 +23,23 @@ import Dots from "./components/Dots.vue";
 export default {
   components: {
     Hello,
+    Dots,
     NavBar,
     Footer,
-    Dots,
   },
-  mounted() {
-    window.setTimeout(function () {
-      window.onscroll = function () {
-        window.scrollTo({
-          top: window.innerHeight,
-          behavior: "smooth",
-        });
-        window.onscroll = null;
-        window.setTimeout(function () {
-          document.getElementById("helloDiv").style.display = "none";
-        }, 600);
-      };
-    }, 1000);
+  watch: {
+    $route(to, from) {
+      if (window.location.pathname == "/" && window.innerWidth > 700) {
+        document.getElementById("dotsDiv").style.display = "inline";
+      } else if (
+        window.location.pathname == "/about" &&
+        window.innerWidth > 700
+      ) {
+        document.getElementById("dotsDiv").style.display = "inline";
+      } else if (window.location.pathname == "/projects") {
+        document.getElementById("dotsDiv").style.display = "none";
+      }
+    },
   },
 };
 </script>
@@ -57,26 +57,28 @@ export default {
 }
 
 /* router transition animations */
-.scale-slide-enter-active,
-.scale-slide-leave-active {
-  position: absolute;
-  transition: all 0.88s ease;
-}
-.scale-slide-leave-active {
-  opacity: 0;
-}
-.scale-slide-enter-from {
-  right: -100%;
-}
-.scale-slide-enter-to {
-  right: 0%;
-}
-.scale-slide-leave-from {
-  transform: scale(1);
-  opacity: 0.4;
-}
-.scale-slide-leave-to {
-  transform: scale(0.8);
-  opacity: 0;
+@media screen and (min-width: 700px) {
+  .scale-slide-enter-active,
+  .scale-slide-leave-active {
+    position: absolute;
+    transition: all 0.65s ease;
+  }
+  .scale-slide-leave-active {
+    opacity: 0;
+  }
+  .scale-slide-enter-from {
+    right: -100%;
+  }
+  .scale-slide-enter-to {
+    right: 0%;
+  }
+  .scale-slide-leave-from {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  .scale-slide-leave-to {
+    transform: scale(0.8);
+    opacity: 0;
+  }
 }
 </style>

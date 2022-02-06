@@ -38,8 +38,12 @@ h1 {
 
 @media only screen and (max-width: 330px) {
   p {
-    width: 80vw;
     font-size: 0.75em;
+  }
+}
+@media only screen and (max-width: 700px) {
+  p {
+    width: 90vw;
   }
 }
 </style>

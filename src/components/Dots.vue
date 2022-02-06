@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" id="dotsDiv">
     <div class="dots-grid">
       <div
         class="cell"
